@@ -8,6 +8,8 @@
 .buildlog/
 .history
 .svn/
+.vscode/
+
 
 # IntelliJ related
 *.iml
@@ -30,6 +32,14 @@
 .pub-cache/
 .pub/
 /build/
+pubspec.lock
+*.xcconfig
+dpgh
+*.pbxproj
+*.xcworkspacedata
+ios/build
+
+
 
 # Web related
 lib/generated_plugin_registrant.dart
