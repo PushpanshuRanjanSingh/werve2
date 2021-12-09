@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:werve/constant/font_family.dart';
+
+import 'bindings/binding.dart';
 import 'constant/color.dart';
-import 'demographicProfile/demographic_profile_97.dart';
+import 'demographicProfile/views/demographic_profile_97.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,17 +24,28 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Werve',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: FontFamily.quicksand,
-        textTheme: TextTheme(
-        bodyText1: bodyText1,
-        bodyText2: bodyText2,
-      )),
-      home: const HomeScreen(),
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus!.unfocus();
+        }
+      },
+      child: GetMaterialApp(
+        title: 'Werve',
+        debugShowCheckedModeBanner: false,
+        initialBinding: InitiateBindings(),
+        theme: ThemeData(
+            primarySwatch: Colors.blue,
+            fontFamily: FontFamily.quicksand,
+            textTheme: TextTheme(
+              bodyText1: bodyText1,
+              bodyText2: bodyText2,
+            )),
+        home: const HomeScreen(),
+      ),
     );
   }
 }
@@ -41,4 +53,4 @@ class MyApp extends StatelessWidget {
 get bodyText1 => TextStyle(
     color: AppColor.textColor, fontSize: 16, fontWeight: FontWeight.w500);
 get bodyText2 => TextStyle(
-    color: AppColor.textColor, fontSize: 16, fontWeight: FontWeight.w600);
+    color: AppColor.textColor, fontSize: 18, fontWeight: FontWeight.w800);

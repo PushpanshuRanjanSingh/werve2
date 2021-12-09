@@ -3,14 +3,14 @@ import 'dart:ui';
 class AppColor {
   AppColor._();
 
-  static Color textColor = HexColor("#333333");
+  static Color textColor = HexColor("#000000");
+  static Color buttonColor = HexColor("#2F80ED");
   static Color greenTextColor = HexColor("#59C36A");
   static Color grey = HexColor("#F4F4F4");
+  static Color greyBG = HexColor("#E1E1E1");
   static Color yellow = HexColor("#FFDA2D");
   static Color orange = HexColor("#FB9C4C");
-  static Color green50 = HexColor("#A3E8AE");
-
-
+  static Color green50 = HexColor("#59C36A");
 }
 
 class HexColor extends Color {

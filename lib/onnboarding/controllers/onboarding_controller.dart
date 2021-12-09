@@ -18,17 +18,17 @@ class OnboardingController extends GetxController {
 
   List<OnboardingInfo> onboardingPages = [
     OnboardingInfo(
-        'assets/img_ic_health.png',
+        'assets/images/img_ic_health.png',
         'Have a good health',
         'Eat well, drink in moderation, and sleep sound, in these three good health abounds',
         'Latin Proverb'),
     OnboardingInfo(
-        'assets/img_ic_food.png',
+        'assets/images/img_ic_food.png',
         'Eat healthy',
         'when diet is wrong, Medicine is of no use.When diet is correct, Medicine is of no need.',
         'Ayurvedic Proverb'),
     OnboardingInfo(
-        'assets/img_ic_mind.png',
+        'assets/images/img_ic_mind.png',
         'Stress less',
         'Mental health problems don’t define  who you are. They are something you experience. You walk in the rain and you feel the rain, but, importantly, You are not a rain.',
         'Matt Haig'),
