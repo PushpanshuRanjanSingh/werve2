@@ -9,7 +9,7 @@ class DemographicProfileController extends GetxController {
   int heightIn = 0;
   int heightCms = 0;
   int weightLb = 0;
-  int weight = 0;
+  int weightKg = 0;
   int demographicStep = 12;
   int? selectedIndex;
   int? waistCircumference;
@@ -68,6 +68,15 @@ class DemographicProfileController extends GetxController {
       double feet = inch / 12;
       heightFt = feet.toInt();
       heightIn = ((feet - heightFt) * 100).toInt();
+    }
+    update();
+  }
+
+  void calculateWeight() {
+    if (weightKg != 0) {
+      weightLb = (weightKg * 2.205).ceil().toInt();
+    } else if (weightLb != 0) {
+      weightKg = (weightLb / 2.205).ceil().toInt();
     }
     update();
   }

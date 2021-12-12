@@ -11,6 +11,7 @@ import 'package:werve/demographicProfile/controller/demographic_profile_controll
 import 'package:werve/demographicProfile/model/age_range_question.dart';
 import 'package:werve/demographicProfile/model/gender_question.dart';
 import 'package:werve/demographicProfile/model/height_question.dart';
+import 'package:werve/demographicProfile/model/weight_question.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ageQuestion(controller),
         genderQuestion(controller),
         heightQuestion(controller),
+        weightQuestion(controller),
       ];
       return Scaffold(
         body: SafeArea(
