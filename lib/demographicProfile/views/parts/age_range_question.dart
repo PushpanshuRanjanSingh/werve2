@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:werve/components/custom_outlined_button.dart';
-import 'package:werve/constant/assets.dart';
-import 'package:werve/constant/color.dart';
-import 'package:werve/constant/common_widget.dart';
-import 'package:werve/constant/custom_text.dart';
-import 'package:werve/demographicProfile/controller/demographic_profile_controller.dart';
+import 'package:werve/export.dart';
 
 Widget ageQuestion(DemographicProfileController controller) => Center(
       child: SingleChildScrollView(
@@ -15,7 +8,7 @@ Widget ageQuestion(DemographicProfileController controller) => Center(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 children: [
-                  imageAsset(Assets.greenStar, height: 68, width: 68),
+                  imageAsset(Assets.starIcon, height: 68, width: 68),
                   vGap(height: 2),
                   customTextFullWidth(
                       "Congratulations on taking the first step!",

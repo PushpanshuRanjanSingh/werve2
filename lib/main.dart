@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:werve/constant/font_family.dart';
-
-import 'bindings/binding.dart';
-import 'constant/color.dart';
-import 'demographicProfile/views/demographic_profile_97.dart';
+import 'package:werve/export.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,13 +31,14 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialBinding: InitiateBindings(),
         theme: ThemeData(
+            backgroundColor: Colors.white,
             primarySwatch: Colors.blue,
             fontFamily: FontFamily.quicksand,
             textTheme: TextTheme(
               bodyText1: bodyText1,
               bodyText2: bodyText2,
             )),
-        home: const HomeScreen(),
+        home: const ProfileStepFirst(),
       ),
     );
   }

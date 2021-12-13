@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
-import 'package:werve/constant/color.dart';
+import 'package:werve/export.dart';
 
 class StepCounter extends StatelessWidget {
   final int currentStep;

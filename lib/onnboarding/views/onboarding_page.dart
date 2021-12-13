@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:werve/onnboarding/controllers/onboarding_controller.dart';
+import 'package:werve/export.dart';
 
 class OnboardingPage extends StatelessWidget {
   final _controller = OnboardingController();

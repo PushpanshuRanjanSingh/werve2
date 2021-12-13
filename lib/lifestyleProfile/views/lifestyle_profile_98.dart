@@ -1,18 +1,14 @@
 import 'package:werve/export.dart';
 
-class DemographicQuestionnaire extends StatelessWidget {
-  const DemographicQuestionnaire({Key? key}) : super(key: key);
+
+class LifestyleQuestionnaire extends StatelessWidget {
+  const LifestyleQuestionnaire({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<DemographicProfileController>(builder: (controller) {
+    return GetBuilder<LifeStyleProfileController>(builder: (controller) {
       List<Widget> pages = [
-        ageQuestion(controller),
-        genderQuestion(controller),
-        heightQuestion(controller),
-        weightQuestion(controller),
-        waistQuestion(controller),
-        countryQuestion(controller),
+        yourJobType(controller),
       ];
       return Scaffold(
         body: SafeArea(
@@ -22,7 +18,7 @@ class DemographicQuestionnaire extends StatelessWidget {
               vGap(),
               polygonTimeLine(),
               vGap(height: 30),
-              customTextFullWidth("Demographic Profile", bold: true),
+              customTextFullWidth("Lifestyle", bold: true),
               vGap(height: 40),
               Expanded(
                 child: PageView(
@@ -31,8 +27,6 @@ class DemographicQuestionnaire extends StatelessWidget {
                   children: pages,
                 ),
               ),
-
-              // const Spacer(),
               Column(
                 children: [
                   Padding(
@@ -60,14 +54,14 @@ class DemographicQuestionnaire extends StatelessWidget {
                     ),
                   ),
                   customText(
-                      "${controller.demographicStep.round().toInt()}% Complete",
+                      "${controller.lifestyleStep.round().toInt()}% Complete",
                       style: Theme.of(Get.context!)
                           .textTheme
                           .bodyText1!
                           .copyWith(fontSize: 12, fontWeight: FontWeight.w300)),
                   vGap(height: 2),
                   StepCounter(
-                      currentStep: controller.demographicStep.round().toInt(),
+                      currentStep: controller.lifestyleStep.round().toInt(),
                       color: controller.newColor()),
                 ],
               ),

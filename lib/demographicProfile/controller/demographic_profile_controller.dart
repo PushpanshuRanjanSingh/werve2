@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:werve/constant/color.dart';
-
-import 'data/static_data.dart';
+import 'package:werve/export.dart';
 
 class DemographicProfileController extends GetxController {
   int heightFt = 0;
@@ -10,17 +6,24 @@ class DemographicProfileController extends GetxController {
   int heightCms = 0;
   int weightLb = 0;
   int weightKg = 0;
-  int demographicStep = 12;
+  double demographicStep = 16.6666666667;
   int? selectedIndex;
-  int? waistCircumference;
+  int waistCircumferenceIn = 0;
+  int waistCircumferenceCms = 0;
   bool isFt = true;
   bool isKg = true;
   String? ageRange;
   String? gender;
   String? country;
   String? city;
-
+  String? dropdownValue;
+  TextEditingController cityEditingController = TextEditingController();
+  TextEditingController countryEditingController = TextEditingController();
+  List<String> countryList = const ["India", "Italia", "Tunisia", 'Canada'];
+  List<String>? cityList = [];
   PageController pageController = PageController();
+  CountryCityModel countryCityModel =
+      CountryCityModel.fromJson(countryListData);
 
   List<String> selectYourAgeGroup = [
     "Below 18 yrs",
@@ -37,6 +40,8 @@ class DemographicProfileController extends GetxController {
   List<int> weightInLbs = weightInLbsData;
   List<int> weightInKg = weightInKgData;
   List<int> heightInCms = heightInCmsData;
+  List<int> waistInIn = waistInInData;
+  List<int> waistInCms = waistInCmsData;
 
   void toggleToFt() {
     isFt = true;
@@ -81,12 +86,34 @@ class DemographicProfileController extends GetxController {
     update();
   }
 
+  void calculateWaist() {
+    if (waistCircumferenceIn != 0) {
+      waistCircumferenceCms = (waistCircumferenceIn * 2.54).ceil().toInt();
+    } else if (waistCircumferenceCms != 0) {
+      waistCircumferenceIn = (waistCircumferenceCms / 2.54).ceil().toInt();
+    }
+    update();
+  }
+
+  void setCountry(CountryDataModel? value) {
+    city = null;
+    country = value?.country;
+    cityList = value?.cities;
+    update();
+  }
+
+  void setCity(String? value) {
+    city = value;
+  }
+
   void nextPage(length) {
     if (pageController.page!.toInt() < length - 1) {
       pageController.animateToPage(pageController.page!.toInt() + 1,
           duration: const Duration(milliseconds: 10), curve: Curves.easeIn);
-      demographicStep = demographicStep + 12;
+      demographicStep = demographicStep + 16.6666666667;
       update();
+    } else if (pageController.page!.toInt() == length - 1) {
+      Get.to(() => const ProfileStepSecond());
     }
   }
 
@@ -94,7 +121,7 @@ class DemographicProfileController extends GetxController {
     if (pageController.page!.toInt() > 0) {
       pageController.animateToPage(pageController.page!.toInt() - 1,
           duration: const Duration(milliseconds: 10), curve: Curves.easeIn);
-      demographicStep = demographicStep - 12;
+      demographicStep = demographicStep - 16.6666666667;
       update();
     }
   }
@@ -113,7 +140,7 @@ class DemographicProfileController extends GetxController {
       return colorList[1];
     } else if (demographicStep >= 50 && demographicStep < 90) {
       return colorList[2];
-    } else if (demographicStep >= 90 && demographicStep <= 100) {
+    } else if (demographicStep >= 90 && demographicStep <= 101) {
       return colorList[3];
     } else {
       return AppColor.greyBG;

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/utils.dart';
-import 'package:werve/onnboarding/models/onboarding_info.dart';
+import 'package:werve/export.dart';
 
 class OnboardingController extends GetxController {
   var selectedPageIndex = 0.obs;

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:werve/export.dart';
 
 class CustomTextStyle {
   static TextStyle fadeText1(

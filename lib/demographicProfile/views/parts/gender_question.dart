@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:werve/components/custom_outlined_button.dart';
-import 'package:werve/constant/color.dart';
-import 'package:werve/constant/common_widget.dart';
-import 'package:werve/constant/custom_text.dart';
-import 'package:werve/demographicProfile/controller/demographic_profile_controller.dart';
+import 'package:werve/export.dart';
 
 Widget genderQuestion(DemographicProfileController controller) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),

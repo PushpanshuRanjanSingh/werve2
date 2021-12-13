@@ -1,11 +1,13 @@
-import 'dart:ui';
+import 'package:werve/export.dart';
 
 class AppColor {
   AppColor._();
 
   static Color textColor = HexColor("#000000");
   static Color buttonColor = HexColor("#2F80ED");
+  static Color blueTextColor = HexColor("#4A6BB0");
   static Color greenTextColor = HexColor("#59C36A");
+  static Color pinkTextColor = HexColor("#DD4794");
   static Color grey = HexColor("#F4F4F4");
   static Color greyBG = HexColor("#E1E1E1");
   static Color yellow = HexColor("#FFDA2D");

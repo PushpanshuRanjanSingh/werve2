@@ -1,9 +1,9 @@
-import 'package:get/get.dart';
-import 'package:werve/demographicProfile/controller/demographic_profile_controller.dart';
+import 'package:werve/export.dart';
 
 class InitiateBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => DemographicProfileController());
+    Get.lazyPut(() => DemographicProfileController(), fenix: true);
+    Get.lazyPut(() => LifeStyleProfileController(), fenix: true);
   }
 }

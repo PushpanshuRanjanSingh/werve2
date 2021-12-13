@@ -16,6 +16,8 @@ dependencies:
   get: ^4.5.1
   flutter_svg: ^1.0.0
   step_progress_indicator: ^1.0.1
+  dropdown_search: ^2.0.1
+  
 
 dev_dependencies:
   flutter_test:
