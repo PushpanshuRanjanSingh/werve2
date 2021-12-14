@@ -3,12 +3,12 @@ import 'package:werve/export.dart';
 vGap({double height = 10.0}) => SizedBox(height: height);
 hGap({double width = 10.0}) => SizedBox(width: width);
 
-polygonTimeLine() => Padding(
+polygonTimeLine(int step) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 45),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          svgAsset(Assets.timelinePolygon),
+          svgAsset(Assets.timelinePolygon, color: step==1?null:Colors.grey),
           Expanded(
             child: Container(
               height: 1.0,
@@ -17,7 +17,7 @@ polygonTimeLine() => Padding(
           ),
           svgAsset(
             Assets.timelinePolygon,
-            color: Colors.grey,
+            color: step==2?null:Colors.grey,
           ),
           Expanded(
             child: Container(
@@ -27,7 +27,7 @@ polygonTimeLine() => Padding(
           ),
           svgAsset(
             Assets.timelinePolygon,
-            color: Colors.grey,
+            color: step==3?null:Colors.grey,
           ),
         ],
       ),

@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               bodyText1: bodyText1,
               bodyText2: bodyText2,
             )),
-        home: const ProfileStepFirst(),
+        home: const DemographicQuestionnaire(),
       ),
     );
   }
@@ -46,5 +46,6 @@ class MyApp extends StatelessWidget {
 
 get bodyText1 => TextStyle(
     color: AppColor.textColor, fontSize: 16, fontWeight: FontWeight.w500);
+
 get bodyText2 => TextStyle(
     color: AppColor.textColor, fontSize: 18, fontWeight: FontWeight.w800);

@@ -13,6 +13,17 @@ class AppColor {
   static Color yellow = HexColor("#FFDA2D");
   static Color orange = HexColor("#FB9C4C");
   static Color green50 = HexColor("#59C36A");
+  static Color white = HexColor("#FFFFFF");
+  static Color golden = HexColor("#D0BA7D");
+  static Color pinkish = HexColor("#EB5757");
+
+  //  goal
+  static Color fitnessColor = HexColor("#F2EEE3");
+  static Color mindfulnessColor = HexColor("#D1DEFF");
+  static Color nutritionColor = HexColor("#F6FFE0");
+  static Color sleepColor = HexColor("#FFF7D4");
+  static Color smartphoneColor = HexColor("#FFECF5");
+  static Color diabetesColor = HexColor("#FFDED0");
 }
 
 class HexColor extends Color {

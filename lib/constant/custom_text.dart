@@ -19,12 +19,15 @@ Widget customTextFullWidth(String text,
     Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          text,
-          style: bold
-              ? style ?? Theme.of(Get.context!).textTheme.bodyText2
-              : style ?? Theme.of(Get.context!).textTheme.bodyText1,
-          maxLines: maxLines ?? 1,
+        Expanded(
+          child: Text(
+            text,
+            style: bold
+                ? style ?? Theme.of(Get.context!).textTheme.bodyText2
+                : style ?? Theme.of(Get.context!).textTheme.bodyText1,
+            maxLines: maxLines,
+            textAlign: TextAlign.center,
+          ),
         ),
       ],
     );
