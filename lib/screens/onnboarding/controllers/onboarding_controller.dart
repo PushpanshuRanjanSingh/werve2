@@ -1,13 +1,13 @@
 import 'package:werve/export.dart';
 
-class OnboardingController extends GetxController {
+class OnBoardingController extends GetxController {
   var selectedPageIndex = 0.obs;
   bool get isLastPage => selectedPageIndex.value == onboardingPages.length - 1;
   var pageController = PageController();
 
   forwardAction() {
     if (isLastPage) {
-      // go to home page
+      Get.to(() => const DemographicQuestionnaire());
     } else {
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
     }

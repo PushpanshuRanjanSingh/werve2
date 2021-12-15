@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               bodyText1: bodyText1,
               bodyText2: bodyText2,
             )),
-        home: const DemographicQuestionnaire(),
+        home: const OnBoardingPage(),
       ),
     );
   }

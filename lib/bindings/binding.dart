@@ -7,5 +7,6 @@ class InitiateBindings extends Bindings {
     Get.lazyPut(() => LifeStyleProfileController(), fenix: true);
     Get.lazyPut(() => HabitNBehaviorController(), fenix: true);
     Get.lazyPut(() => GoalSettingController(), fenix: true);
+    Get.lazyPut(() => OnBoardingController(), fenix: true);
   }
 }
