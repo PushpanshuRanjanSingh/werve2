@@ -77,5 +77,37 @@ export 'screens/profileStepper/profile_step.dart';
 export 'screens/profileStepper/profile_step_1.dart';
 export 'screens/profileStepper/profile_step_2.dart';
 export 'screens/profileStepper/profile_step_3.dart';
+export 'screens/profileStepper/profile_step_4.dart';
+export 'screens/profileStepper/profile_step_5.dart';
+export 'screens/profileStepper/profile_step_6.dart';
+/*     @Lifestyle Activity     */
+export 'screens/lifestyleActivity/controller/data/static_data.dart';
+export 'screens/lifestyleActivity/controller/lifestyle_activity_controller.dart';
+export 'screens/lifestyleActivity/views/lifestyle_activity_56.dart';
+export 'screens/lifestyleActivity/views/parts/average_sleep.dart';
+export 'screens/lifestyleActivity/views/parts/do_you_exercise.dart';
+export 'screens/lifestyleActivity/views/parts/do_you_smoke.dart';
+export 'screens/lifestyleActivity/views/parts/feel_enthusiastic.dart';
+export 'screens/lifestyleActivity/views/parts/serving_of_alcohol.dart';
+export 'screens/lifestyleActivity/views/parts/working_mood.dart';
+export 'screens/lifestyleActivity/views/parts/spend_time.dart';
+/*     @Lifestyle Second     */
+export 'screens/lifestyleSecond/controller/lifestyle_second_controller.dart';
+export 'screens/lifestyleSecond/controller/data/static_data.dart';
+export 'screens/lifestyleSecond/views/lifestyle_second_64.dart';
+export 'screens/lifestyleSecond/views/parts/adjust_to_change.dart';
+export 'screens/lifestyleSecond/views/parts/comfortable_enjoy.dart';
+export 'screens/lifestyleSecond/views/parts/easy_to_giveup.dart';
+export 'screens/lifestyleSecond/views/parts/non_works_hours.dart';
+export 'screens/lifestyleSecond/views/parts/skip_meal.dart';
+export 'screens/lifestyleSecond/views/parts/take_preventative_measures.dart';
+export 'screens/lifestyleSecond/views/parts/unplug_from_work.dart';
+export 'screens/lifestyleSecond/views/parts/weight_change.dart';
+export 'screens/lifestyleSecond/views/parts/weight_indicate_change.dart';
+/*     @Menstrual Cycle PCOD     */
+export 'screens/menstrualCycle/controller/data/static_data.dart';
+export 'screens/menstrualCycle/controller/menstrual_cycle_controller.dart';
+export 'screens/menstrualCycle/views/menstrual_cycle_81.dart';
+
 /*     @Utils     */
 export 'utils/network.dart';

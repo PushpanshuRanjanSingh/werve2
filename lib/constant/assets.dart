@@ -10,6 +10,7 @@ class Assets {
   static String profileStep_1 = "assets/images/step1.png";
   static String profileStep_2 = "assets/images/step2.png";
   static String profileStep_3 = "assets/images/step3.png";
+  static String profileStep_6 = "assets/images/pcod.png";
   static String goal = "assets/images/goal.png";
   static String fitness = "assets/icons/fitness.png";
   static String mindfulness = "assets/icons/mindfulness.png";

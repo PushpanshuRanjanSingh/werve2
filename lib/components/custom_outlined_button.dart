@@ -25,7 +25,7 @@ Widget customOutlineButton(
         side:
             BorderSide(width: 1.0, color: borderColor ?? AppColor.buttonColor),
       ),
-      child: customText(label,
+      child: customText(label,maxLines: 3,textAlign: TextAlign.center,
           style: CustomTextStyle.fadeText2(
               textColor: textColor ?? AppColor.buttonColor,
               fontSize: 14,

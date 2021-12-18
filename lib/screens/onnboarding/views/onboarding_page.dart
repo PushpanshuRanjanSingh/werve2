@@ -56,30 +56,7 @@ class OnBoardingPage extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                customText(
-                                    controller.onboardingPages[index].title,
-                                    bold: true,
-                                    style:
-                                        CustomTextStyle.fadeText2(fontSize: 22)),
-                                vGap(height: 20),
-                                customText(
-                                    controller.onboardingPages[index].description,
-                                    maxLines: 4,
-                                    textAlign: TextAlign.center,
-                                    style: CustomTextStyle.fadeText1(
-                                        fontSize: 18,
-                                        textColor: AppColor.blueTextColor)),
-                                vGap(height: 20),
-                                customText(
-                                    controller.onboardingPages[index].proverb,
-                                    bold: true,
-                                    style:
-                                        CustomTextStyle.fadeText2(fontSize: 18)),
-                              ],
-                            ),
+                            child:  _view(controller, index),
                           ),
                           const SizedBox(),
                         ],
@@ -112,4 +89,22 @@ class OnBoardingPage extends StatelessWidget {
       );
     });
   }
+
+  Widget _view(OnBoardingController controller, int index) =>
+      Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          customText(controller.onboardingPages[index].title,
+              bold: true, style: CustomTextStyle.fadeText2(fontSize: 22)),
+          vGap(height: 20),
+          customText(controller.onboardingPages[index].description,
+              maxLines: 4,
+              textAlign: TextAlign.center,
+              style: CustomTextStyle.fadeText1(
+                  fontSize: 18, textColor: AppColor.blueTextColor)),
+          vGap(height: 20),
+          customText(controller.onboardingPages[index].proverb,
+              bold: true, style: CustomTextStyle.fadeText2(fontSize: 18)),
+        ],
+      );
 }

@@ -11,7 +11,7 @@ Widget customText(String text,
       style: bold
           ? style ?? Theme.of(Get.context!).textTheme.bodyText2
           : style ?? Theme.of(Get.context!).textTheme.bodyText1,
-      maxLines: maxLines ?? 1,
+      maxLines: maxLines ?? 3,
     );
 
 Widget customTextFullWidth(String text,
