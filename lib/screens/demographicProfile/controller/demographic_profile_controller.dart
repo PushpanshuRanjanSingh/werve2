@@ -1,6 +1,7 @@
 import 'package:werve/export.dart';
 
-class DemographicProfileController extends GetxController {
+class DemographicProfileController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   int heightFt = 0;
   int heightIn = 0;
   int heightCms = 0;
@@ -15,7 +16,7 @@ class DemographicProfileController extends GetxController {
   String? ageRange;
   String? gender;
   String? country;
-  String? city;
+  RxString city = "".obs;
   String? dropdownValue;
   TextEditingController cityEditingController = TextEditingController();
   TextEditingController countryEditingController = TextEditingController();
@@ -24,6 +25,7 @@ class DemographicProfileController extends GetxController {
   PageController pageController = PageController();
   CountryCityModel countryCityModel =
       CountryCityModel.fromJson(countryListData);
+
 
   List<String> selectYourAgeGroup = [
     "Below 18 yrs",
@@ -42,6 +44,27 @@ class DemographicProfileController extends GetxController {
   List<int> heightInCms = heightInCmsData;
   List<int> waistInIn = waistInInData;
   List<int> waistInCms = waistInCmsData;
+
+
+  AnimationController? animationController;
+  Listenable? animation;
+  Animation<double>? animationHandler;
+  final duration = const Duration(milliseconds: 500);
+  demographicAnimation() {
+    animation = Tween<double>(begin: 0, end: 150).animate(animationController!)
+      ..addListener(() => update());
+    animationHandler = Tween<double>(begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
+        .animate(animationController!)
+      ..addListener(() => update());
+    animationController?.forward();
+  }
+
+
+  @override
+  void onInit() {
+    animationController = AnimationController(duration: duration, vsync: this);
+    super.onInit();
+  }
 
   void toggleToFt() {
     isFt = true;
@@ -96,14 +119,16 @@ class DemographicProfileController extends GetxController {
   }
 
   void setCountry(CountryDataModel? value) {
-    city = null;
+    city = "".obs;
     country = value?.country;
     cityList = value?.cities;
     update();
   }
 
   void setCity(String? value) {
-    city = value;
+    city.value = value!;
+    demographicAnimation();
+    update();
   }
 
   void nextPage(length) {

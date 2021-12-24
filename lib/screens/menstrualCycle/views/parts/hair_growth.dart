@@ -42,10 +42,11 @@ Widget hairGrowthMethod(MenstrualCycleController controller) => Padding(
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         itemCount: controller.hairGrowthFirstData.length,
                         itemBuilder: (BuildContext context, int index) {
                           return customOutlineButton(
+                            deactivate: controller.hairGrowthSelect !=
+                                controller.hairGrowthData[0],
                             label: controller.hairGrowthFirstData[index],
                             bgColor: controller.hairGrowthFirstSelect ==
                                     controller.hairGrowthFirstData[index]

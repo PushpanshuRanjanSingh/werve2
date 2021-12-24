@@ -12,6 +12,8 @@ export 'package:flutter_svg/svg.dart';
 /*     @3rd Party     */
 export 'package:get/get.dart' hide HeaderValue;
 export 'package:step_progress_indicator/step_progress_indicator.dart';
+export 'package:lottie/lottie.dart';
+
 
 /*     @Bindings     */
 export 'bindings/binding.dart';
@@ -111,3 +113,4 @@ export 'screens/menstrualCycle/views/menstrual_cycle_81.dart';
 
 /*     @Utils     */
 export 'utils/network.dart';
+export 'globalController/animation_controller.dart';

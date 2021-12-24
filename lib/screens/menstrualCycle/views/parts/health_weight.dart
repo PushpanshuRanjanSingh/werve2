@@ -42,10 +42,11 @@ Widget healthWeightMethod(MenstrualCycleController controller) => Padding(
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         itemCount: controller.healthWeightFirstData.length,
                         itemBuilder: (BuildContext context, int index) {
                           return customOutlineButton(
+                            deactivate: controller.healthWeightSelect !=
+                                controller.healthWeightData[0],
                             label: controller.healthWeightFirstData[index],
                             bgColor: controller.healthWeightFirstSelect ==
                                     controller.healthWeightFirstData[index]

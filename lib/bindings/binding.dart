@@ -11,5 +11,6 @@ class InitiateBindings extends Bindings {
     Get.lazyPut(() => LifeStyleActivityController(), fenix: true);
     Get.lazyPut(() => LifeStyleSecondController(), fenix: true);
     Get.lazyPut(() => MenstrualCycleController(), fenix: true);
+    Get.lazyPut(() => GetxAnimationController(), fenix: true);
   }
 }

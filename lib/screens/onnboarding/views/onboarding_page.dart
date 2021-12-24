@@ -10,6 +10,7 @@ class OnBoardingPage extends StatelessWidget {
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(
                 child: PageView.builder(
@@ -25,8 +26,8 @@ class OnBoardingPage extends StatelessWidget {
                             children: [
                               imageAsset(
                                   controller.onboardingPages[index].imageAsset,
-                                  height: 200,
-                                  width: 200),
+                                  height: context.isPortrait ?  200 : 100,
+                                  width: context.isPortrait ?  200 : 100),
                               vGap(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -55,9 +56,9 @@ class OnBoardingPage extends StatelessWidget {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child:  _view(controller, index),
-                          ),
+                              padding: const EdgeInsets.all(16.0),
+                              child:  _view(controller, index),
+                            ),
                           const SizedBox(),
                         ],
                       );
@@ -71,16 +72,12 @@ class OnBoardingPage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(0))),
                   child: customText(
-                      controller.selectedPageIndex.value == 3 ? "NEXT" : "SKIP",
+                      "SKIP",
                       style: CustomTextStyle.fadeText2(
                           fontSize: 18, textColor: AppColor.white)),
                   onPressed: () {
                     controller.forwardAction();
-                    debugPrint(controller.onboardingPages.length.toString());
-                    debugPrint(controller.selectedPageIndex.value.toString());
-                    debugPrint(
-                        controller.pageController.page!.toInt().toString());
-                  },
+                        },
                 ),
               )
             ],

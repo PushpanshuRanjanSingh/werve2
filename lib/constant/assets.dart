@@ -21,4 +21,5 @@ class Assets {
   static String heart1 = "assets/icons/heart-1.png";
   static String heart2 = "assets/icons/heart-2.png";
   static String heart3 = "assets/icons/heart-3.png";
+  static String pop = "assets/lottie/pop.json";
 }

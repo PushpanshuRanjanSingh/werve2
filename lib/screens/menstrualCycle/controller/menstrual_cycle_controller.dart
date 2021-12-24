@@ -25,14 +25,14 @@ class MenstrualCycleController extends GetxController {
 
 
   PageController pageController = PageController();
-  double step = 12.5;
+  double step = 20;
 
 
   void nextPage(length) {
     if (pageController.page!.toInt() < length - 1) {
       pageController.animateToPage(pageController.page!.toInt() + 1,
           duration: const Duration(milliseconds: 10), curve: Curves.easeIn);
-      step = step + 12.5;
+      step = step + 20;
       update();
     }
     //  else if (pageController.page!.toInt() == length - 1) {
@@ -44,7 +44,7 @@ class MenstrualCycleController extends GetxController {
     if (pageController.page!.toInt() > 0) {
       pageController.animateToPage(pageController.page!.toInt() - 1,
           duration: const Duration(milliseconds: 10), curve: Curves.easeIn);
-      step = step - 12.5;
+      step = step - 20;
       update();
     }
   }

@@ -1,6 +1,6 @@
 import 'package:werve/export.dart';
 
-class LifeStyleActivityController extends GetxController {
+class LifeStyleActivityController extends GetxController with GetSingleTickerProviderStateMixin{
   String? doYouExerciseSelect;
   String? doYouSmokeSelect;
   String? servingOfAlcoholSelect;
@@ -20,6 +20,25 @@ class LifeStyleActivityController extends GetxController {
 
   PageController pageController = PageController();
   double step = 14.28;
+
+  AnimationController? animationController;
+  Listenable? animation;
+  Animation<double>? animationHandler;
+  final duration = const Duration(milliseconds: 500);
+  noSmokeAnimation() {
+    animation = Tween<double>(begin: 0, end: 150).animate(animationController!)
+      ..addListener(() => update());
+    animationHandler = Tween<double>(begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
+        .animate(animationController!)
+      ..addListener(() => update());
+    animationController?.forward();
+  }
+  @override
+  void onInit() {
+    animationController = AnimationController(duration: duration, vsync: this);
+    super.onInit();
+  }
+
 
   void nextPage(length) {
     if (pageController.page!.toInt() < length - 1) {

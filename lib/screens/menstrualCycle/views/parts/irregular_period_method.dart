@@ -42,10 +42,11 @@ Widget irregularPeriodMethod(MenstrualCycleController controller) => Padding(
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         itemCount: controller.irregularPeriodFirstData.length,
                         itemBuilder: (BuildContext context, int index) {
                           return customOutlineButton(
+                            deactivate: controller.irregularPeriodSelect !=
+                                controller.irregularPeriodData[0],
                             label: controller.irregularPeriodFirstData[index],
                             bgColor: controller.irregularPeriodFirstSelect ==
                                     controller.irregularPeriodFirstData[index]

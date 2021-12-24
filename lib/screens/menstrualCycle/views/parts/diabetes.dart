@@ -42,24 +42,24 @@ Widget diabetesMethod(MenstrualCycleController controller) => Padding(
                       ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         itemCount: controller.diabetesFirstData.length,
-                        itemBuilder: (BuildContext context, int index) {
+                        itemBuilder: (BuildContext context, int idx) {
                           return customOutlineButton(
-                            label: controller.diabetesFirstData[index],
+                            deactivate: controller.diabetesSelect != controller.diabetesData[0],
+                            label: controller.diabetesFirstData[idx],
                             bgColor: controller.diabetesFirstSelect ==
-                                    controller.diabetesFirstData[index]
+                                    controller.diabetesFirstData[idx]
                                 ? AppColor.green50
                                 : null,
                             borderColor: controller
                                         .diabetesFirstSelect ==
-                                    controller.diabetesFirstData[index]
+                                    controller.diabetesFirstData[idx]
                                 ? AppColor.green50
                                 : AppColor.textColor,
                             textColor: AppColor.textColor,
                             onPressed: () {
                               controller.diabetesFirstSelect =
-                                  controller.diabetesFirstData[index];
+                                  controller.diabetesFirstData[idx];
                               controller.diabetesSelect =
                                   controller.diabetesData[0];
                               controller.update();

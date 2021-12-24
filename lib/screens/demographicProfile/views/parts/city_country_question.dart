@@ -4,20 +4,26 @@ Widget countryQuestion(DemographicProfileController controller) => Center(
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Column(
-                children: [
-                  imageAsset(Assets.awardIcon, height: 68, width: 68),
-                  vGap(height: 2),
-                  customTextFullWidth("Great finish, YuMan!",
-                      style: Theme.of(Get.context!)
-                          .textTheme
-                          .bodyText2!
-                          .copyWith(color: AppColor.greenTextColor)),
-                ],
+            if(controller.city.isNotEmpty && controller.animation!=null || controller.city.isNotEmpty )
+            AnimatedBuilder(
+              builder: (BuildContext context, Widget? child) =>
+               Transform.translate(
+                 offset: Offset(0,-controller.animationHandler!.value),
+                 child: Column(
+                  children: [
+                    imageAsset(Assets.awardIcon, height: 68, width: 68),
+                    vGap(height: 2),
+                    customTextFullWidth("Great finish, YuMan!",
+                        style: Theme.of(Get.context!)
+                            .textTheme
+                            .bodyText2!
+                            .copyWith(color: AppColor.greenTextColor)),
+                  ],
               ),
+               ), animation: controller.animation!,
+              
             ),
+
             vGap(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),

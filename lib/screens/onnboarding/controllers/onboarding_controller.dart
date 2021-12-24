@@ -6,11 +6,13 @@ class OnBoardingController extends GetxController {
   var pageController = PageController();
 
   forwardAction() {
-    if (isLastPage) {
-      Get.to(() => const DemographicQuestionnaire());
-    } else {
-      pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
-    }
+    // if (isLastPage) {
+    //   Get.to(() => const DemographicQuestionnaire());
+    // } else {
+    //   pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
+    // }
+    Get.to(() => const DemographicQuestionnaire());
+
   }
 
   List<OnboardingInfo> onboardingPages = [
