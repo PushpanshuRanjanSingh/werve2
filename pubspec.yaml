@@ -17,6 +17,7 @@ dependencies:
   flutter_svg: ^1.0.0
   step_progress_indicator: ^1.0.1
   dropdown_search: ^2.0.1
+  lottie: ^1.2.1
   
 
 dev_dependencies:

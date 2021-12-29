@@ -1,6 +1,4 @@
 import 'package:werve/export.dart';
-import 'package:werve/screens/lifestyleActivity/views/parts/do_you_exercise.dart';
-
 class LifeStyleActivity extends StatelessWidget {
   const LifeStyleActivity({Key? key}) : super(key: key);
 

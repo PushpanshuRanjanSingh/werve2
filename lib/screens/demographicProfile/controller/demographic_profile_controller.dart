@@ -26,7 +26,6 @@ class DemographicProfileController extends GetxController
   CountryCityModel countryCityModel =
       CountryCityModel.fromJson(countryListData);
 
-
   List<String> selectYourAgeGroup = [
     "Below 18 yrs",
     "18 - 26 yrs",
@@ -45,20 +44,33 @@ class DemographicProfileController extends GetxController
   List<int> waistInIn = waistInInData;
   List<int> waistInCms = waistInCmsData;
 
-
   AnimationController? animationController;
   Listenable? animation;
   Animation<double>? animationHandler;
+  Animation<double>? animationstartHandler;
   final duration = const Duration(milliseconds: 500);
+
   demographicAnimation() {
-    animation = Tween<double>(begin: 0, end: 150).animate(animationController!)
+    animation = Tween<double>(begin: 0, end: 150).animate(CurvedAnimation(
+        parent: animationController!, curve: Curves.bounceInOut))
       ..addListener(() => update());
-    animationHandler = Tween<double>(begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
+    animationHandler = Tween<double>(
+            begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
         .animate(animationController!)
       ..addListener(() => update());
     animationController?.forward();
   }
 
+  startAnimation() {
+    animation = Tween<double>(begin: 0, end: 150).animate(CurvedAnimation(
+        parent: animationController!, curve: Curves.bounceInOut))
+      ..addListener(() => update());
+    animationstartHandler = Tween<double>(
+            begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
+        .animate(animationController!)
+      ..addListener(() => update());
+    animationController?.forward();
+  }
 
   @override
   void onInit() {
@@ -127,8 +139,8 @@ class DemographicProfileController extends GetxController
 
   void setCity(String? value) {
     city.value = value!;
-    demographicAnimation();
     update();
+    demographicAnimation();
   }
 
   void nextPage(length) {

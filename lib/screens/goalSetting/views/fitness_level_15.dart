@@ -1,5 +1,4 @@
 import 'package:werve/export.dart';
-import 'package:werve/screens/profileStepper/profile_step_4.dart';
 
 class FitnessLevel extends StatelessWidget {
   const FitnessLevel({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class FitnessLevel extends StatelessWidget {
                         }
                         controller.levelList[index].isSelected = true;
                         controller.update();
-                        Get.to(()=>const ProfileStepFourth());
+                        Get.to(() => const ProfileStepFourth());
                       },
                       child: Container(
                         height: 80,

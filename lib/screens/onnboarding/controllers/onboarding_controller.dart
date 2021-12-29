@@ -1,4 +1,5 @@
 import 'package:werve/export.dart';
+import 'package:werve/screens/authentication/pages/get_started.dart';
 
 class OnBoardingController extends GetxController {
   var selectedPageIndex = 0.obs;
@@ -11,7 +12,7 @@ class OnBoardingController extends GetxController {
     // } else {
     //   pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
     // }
-    Get.to(() => const DemographicQuestionnaire());
+    Get.to(() => const AuthGetStarted());
 
   }
 

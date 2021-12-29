@@ -1,6 +1,7 @@
 import 'package:werve/export.dart';
 
-class HabitNBehaviorController extends GetxController {
+class HabitNBehaviorController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   double habitNBehaviourStep = 14.28;
   PageController pageController = PageController();
 
@@ -19,6 +20,28 @@ class HabitNBehaviorController extends GetxController {
   List<String> oftenEatData = oftenEat;
   List<String> snackData = snack;
   List<String> urgeToSnackData = urgeToSnack;
+
+  AnimationController? animationController;
+  Listenable? animation;
+  Animation<double>? animationHandler;
+  final duration = const Duration(milliseconds: 500);
+
+  @override
+  void onInit() {
+    animationController = AnimationController(duration: duration, vsync: this);
+    super.onInit();
+  }
+
+  oftenEatAnimation() {
+    animation = Tween<double>(begin: 0, end: 150).animate(CurvedAnimation(
+        parent: animationController!, curve: Curves.bounceInOut))
+      ..addListener(() => update());
+    animationHandler = Tween<double>(
+            begin: Get.context!.isPortrait ? Get.width : Get.height, end: 0)
+        .animate(animationController!)
+      ..addListener(() => update());
+    animationController?.forward();
+  }
 
   void nextPage(length) {
     if (pageController.page!.toInt() < length - 1) {

@@ -4,21 +4,26 @@ Widget ageQuestion(DemographicProfileController controller) => Center(
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Column(
-                children: [
-                  imageAsset(Assets.starIcon, height: 68, width: 68),
-                  vGap(height: 2),
-                  customTextFullWidth(
-                      "Congratulations on taking the first step!",
-                      style: Theme.of(Get.context!)
-                          .textTheme
-                          .bodyText2!
-                          .copyWith(color: AppColor.greenTextColor)),
-                ],
+            if (controller.ageRange != null && controller.animation != null)
+              AnimatedBuilder(
+                builder: (BuildContext context, Widget? child) =>
+                    Transform.translate(
+                  offset: Offset(0, -controller.animationstartHandler!.value),
+                  child: Column(
+                    children: [
+                      imageAsset(Assets.starIcon, height: 68, width: 68),
+                      vGap(height: 2),
+                      customTextFullWidth(
+                          "Congratulations on taking the first step!",
+                          style: Theme.of(Get.context!)
+                              .textTheme
+                              .bodyText2!
+                              .copyWith(color: AppColor.greenTextColor)),
+                    ],
+                  ),
+                ),
+                animation: controller.animation!,
               ),
-            ),
             vGap(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -47,6 +52,7 @@ Widget ageQuestion(DemographicProfileController controller) => Center(
                           onPressed: () {
                             controller.ageRange =
                                 controller.selectYourAgeGroup[index];
+                            controller.startAnimation();
                             controller.update();
                           },
                         );

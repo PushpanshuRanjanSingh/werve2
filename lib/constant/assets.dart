@@ -11,6 +11,8 @@ class Assets {
   static String profileStep_2 = "assets/images/step2.png";
   static String profileStep_3 = "assets/images/step3.png";
   static String profileStep_6 = "assets/images/pcod.png";
+  static String topRight = "assets/images/top.png";
+  static String bottomLeft = "assets/images/bottom.png";
   static String goal = "assets/images/goal.png";
   static String fitness = "assets/icons/fitness.png";
   static String mindfulness = "assets/icons/mindfulness.png";
@@ -22,4 +24,7 @@ class Assets {
   static String heart2 = "assets/icons/heart-2.png";
   static String heart3 = "assets/icons/heart-3.png";
   static String pop = "assets/lottie/pop.json";
+  static String welldone = "assets/images/welldone.png";
+  static String leftHeart = "assets/images/leftheart.png";
+  static String rightHeart = "assets/images/rightheart.png";
 }

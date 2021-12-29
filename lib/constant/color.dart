@@ -1,6 +1,7 @@
 import 'package:werve/export.dart';
 
 class AppColor {
+
   AppColor._();
 
   static Color textColor = HexColor("#000000");
@@ -16,6 +17,7 @@ class AppColor {
   static Color white = HexColor("#FFFFFF");
   static Color golden = HexColor("#D0BA7D");
   static Color pinkish = HexColor("#EB5757");
+  static Color authBG = HexColor("#EBDDDB");
 
   //  goal
   static Color fitnessColor = HexColor("#F2EEE3");
